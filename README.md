@@ -7,6 +7,7 @@ Nothing fancy though.
 1) Run `mvn clean install`
 2) Execute the simulator located at: com\github\petruki\playground\Simulator.java
 
+
 You can also create your own scenario or use one of the available pre-built scenarios located at: com\github\petruki\playground\sample
 
 # Output sample
@@ -31,4 +32,15 @@ You can also create your own scenario or use one of the available pre-built scen
 #   run(10)
 #
 #############################
+
+Proc I
+|#####----------#####----------#############
+Proc II
+---|-------#####----------#####
+Proc III
+--|---#####----------#####
+
+- : IDLE
+# : RUNNING
+| : Request time
 ```
