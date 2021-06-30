@@ -56,7 +56,7 @@ public class AbstractProcess extends Job {
 		return instante;
 	}
 	
-	public void setInstante(int instante) {
+	public void setInstant(int instante) {
 		this.instante = instante;
 	}
 	

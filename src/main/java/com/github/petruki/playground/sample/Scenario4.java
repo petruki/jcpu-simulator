@@ -25,10 +25,10 @@ public class Scenario4 {
 		t3.addAction(run4);
 		t4.addAction(run3);
 		
-		t1.setInstante(0);
-		t2.setInstante(0);
-		t3.setInstante(1);
-		t4.setInstante(3);
+		t1.setInstant(0);
+		t2.setInstant(0);
+		t3.setInstant(1);
+		t4.setInstant(3);
 		
 		Custom scenario = new Custom();
 		scenario.addCPU(new Custom.CPUParam("Penryn", 0));

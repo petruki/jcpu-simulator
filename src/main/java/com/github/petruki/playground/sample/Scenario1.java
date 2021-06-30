@@ -14,7 +14,7 @@ public class Scenario1 {
 		AbstractProcess process = new Bravo();
 		AbstractProcess process2 = new Charlie();
 		
-		process2.setInstante(2);
+		process2.setInstant(2);
 		
 		Custom scenario = new Custom();
 		scenario.addCPU(new Custom.CPUParam("Yorkfield", 0));

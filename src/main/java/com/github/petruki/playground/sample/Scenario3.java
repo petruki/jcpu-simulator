@@ -18,9 +18,9 @@ public class Scenario3 {
 		AbstractProcess process3 = new Charlie();
 		AbstractProcess process4 = new Delta();
 		
-		process.setInstante(2);
-		process3.setInstante(4);
-		process4.setInstante(4);
+		process.setInstant(2);
+		process3.setInstant(4);
+		process4.setInstant(4);
 		
 		Custom scenario = new Custom();
 		scenario.addCPU(new Custom.CPUParam("Penryn", 4));

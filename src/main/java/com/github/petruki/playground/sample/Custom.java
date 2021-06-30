@@ -63,13 +63,14 @@ public class Custom {
 	private void printLifeTime() {
 		System.out.println();
 		for(AbstractProcess process : processes) {
-			System.out.println(process.getName());
+			System.out.printf("%s - w: %s \n", process.getName(), process.getCPU_wait_time());
 			System.out.println(process.getLifeTime());
 		}
 		System.out.println();
 		System.out.println("- : IDLE\n" +
 						   "# : RUNNING\n" +
-						   "| : Request time");
+						   "| : STARTED\n" +
+						   "w : WAITING");
 	}
 	
 	public static class CPUParam {

@@ -21,7 +21,7 @@ You can also create your own scenario or use one of the available pre-built scen
 # Proc I
 # Start at: 0
 #   run(10)
-#   run(13)
+#   run(3)
 #
 # Proc II
 # Start at: 3
@@ -33,14 +33,15 @@ You can also create your own scenario or use one of the available pre-built scen
 #
 #############################
 
-Proc I
-|#####----------#####----------#############
-Proc II
+Proc I - w: 20 
+|#####----------#####----------###
+Proc II - w: 17 
 ---|-------#####----------#####
-Proc III
+Proc III - w: 13 
 --|---#####----------#####
 
 - : IDLE
 # : RUNNING
-| : Request time
+| : STARTED
+w : WAITING
 ```
