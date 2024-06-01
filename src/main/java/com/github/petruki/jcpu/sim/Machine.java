@@ -22,14 +22,14 @@ public class Machine {
 	public void addCPU(CPU cpu) {
 		if(!waiting_jobs.isEmpty()) {
 			Job	next = (Job) waiting_jobs.dequeue();
-			next.setRunning_on_CPU(cpu);
+			next.setRunningOnCPU(cpu);
 			Scheduler.activate(next);
 		} else
 			idle_CPUs.enqueue(cpu);
 	}
 	
 	public void print(CPU cpu) {
-		System.out.println("Cycle = " + cpu.getBusy_time() / (double)(Scheduler.clock - cpu.getConst_time()) + "\n");
+		System.out.println("Cycle = " + cpu.getBusyTime() / (double)(Scheduler.clock - cpu.getConstTime()) + "\n");
 	}
 	
 	public void remove_cpu(CPU cpu) {

@@ -7,8 +7,7 @@ import com.github.petruki.playground.sample.process.ActionProcess;
 
 public class Simulator {
 	
-	public static void main(String args[]) {
-//		executeGenericScenario();
+	public static void main(String[] args) {
 		new Scenario6();
 	}
 	
