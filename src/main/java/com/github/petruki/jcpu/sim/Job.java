@@ -1,11 +1,13 @@
 package com.github.petruki.jcpu.sim;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-abstract public class Job extends Process {
+@EqualsAndHashCode(callSuper = true)
+public abstract class Job extends Process {
 
     private int cpuWaitTime;
     private int lastTime;
@@ -26,13 +28,13 @@ abstract public class Job extends Process {
 
     public void run(int left) {
         while (left > 0) {
-            if (!Machine.getInstance().getIdle_CPUs().isEmpty() && Machine.getInstance().getWaiting_jobs().isEmpty()) {
-                runningOnCPU = (CPU) Machine.getInstance().getIdle_CPUs().dequeue();
+            if (!Machine.getInstance().getIdleCPUs().isEmpty() && Machine.getInstance().getWaitingJobs().isEmpty()) {
+                runningOnCPU = (CPU) Machine.getInstance().getIdleCPUs().dequeue();
             }
 
             if (runningOnCPU == null) {
                 cpuWaitTime -= Scheduler.clock;
-                waitQueue(Machine.getInstance().getWaiting_jobs());
+                waitQueue(Machine.getInstance().getWaitingJobs());
                 cpuWaitTime += Scheduler.clock;
             }
 
@@ -62,12 +64,12 @@ abstract public class Job extends Process {
             setRuning(lastTime - Scheduler.clock);
             lastTime = Scheduler.clock;
 
-            Machine.getInstance().getIdle_CPUs().enqueue(runningOnCPU);
+            Machine.getInstance().getIdleCPUs().enqueue(runningOnCPU);
             runningOnCPU = null;
 
-            if (!Machine.getInstance().getWaiting_jobs().isEmpty()) {
-                Job next = (Job) Machine.getInstance().getWaiting_jobs().dequeue();
-                next.runningOnCPU = (CPU) Machine.getInstance().getIdle_CPUs().dequeue();
+            if (!Machine.getInstance().getWaitingJobs().isEmpty()) {
+                Job next = (Job) Machine.getInstance().getWaitingJobs().dequeue();
+                next.runningOnCPU = (CPU) Machine.getInstance().getIdleCPUs().dequeue();
                 Scheduler.activate(next);
             }
         }

@@ -38,7 +38,7 @@ public class Custom {
         Scheduler.runSimulation();
 
         for (CPU cpu : temp) {
-            Machine.getInstance().remove_cpu(cpu);
+            Machine.getInstance().removeCpu(cpu);
         }
 
         printLifeTime();

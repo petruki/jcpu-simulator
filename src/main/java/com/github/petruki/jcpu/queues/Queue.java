@@ -67,7 +67,7 @@ public class Queue {
 
     public Object front() {
         if (head == null) {
-            System.err.println("Error when attempting to check the beggining of an empty queue");
+            System.err.println("Error when attempting to check the beginning of an empty queue");
             System.exit(-1);
         }
         return head.getItem();

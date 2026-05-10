@@ -4,7 +4,7 @@ import com.github.petruki.jcpu.queues.Queue;
 import lombok.Data;
 
 @Data
-abstract public class Process implements Runnable {
+public abstract class Process implements Runnable {
 
     private String name;
     private int state;
